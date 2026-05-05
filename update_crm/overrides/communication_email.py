@@ -6,18 +6,14 @@ from frappe.core.doctype.communication import email as frappe_communication_emai
 
 
 def _get_preferred_sender_for_current_user() -> str | None:
-	"""Return default outgoing sender email only when CRM preference explicitly enables it."""
-	pref = frappe.db.get_value(
+	"""Return default outgoing sender email only when email preference enables it."""
+	use_default_email_account_for_email = frappe.db.get_value(
 		"CRM Email Sender Preference",
 		{"user": frappe.session.user},
-		["enabled", "use_default_email_account_for_crm"],
-		as_dict=True,
+		"use_default_email_account_for_email",
 	)
 
-	if not pref:
-		return None
-
-	if not cint(pref.enabled) or not cint(pref.use_default_email_account_for_crm):
+	if not cint(use_default_email_account_for_email):
 		return None
 
 	default_outgoing_email_id = frappe.db.get_value(
@@ -28,7 +24,6 @@ def _get_preferred_sender_for_current_user() -> str | None:
 		return None
 
 	return default_outgoing_email_id
-
 
 @frappe.whitelist()
 def make(

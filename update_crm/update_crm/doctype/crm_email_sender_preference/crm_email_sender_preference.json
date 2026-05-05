@@ -5,12 +5,11 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
- "field_order": [
+"field_order": [
   "user",
-  "use_default_email_account_for_crm",
-  "default_email_account",
-  "enabled"
- ],
+  "use_default_email_account_for_email",
+  "default_email_account"
+],
  "fields": [
   {
    "fieldname": "user",
@@ -23,21 +22,15 @@
   },
   {
    "default": "0",
-   "fieldname": "use_default_email_account_for_crm",
+   "fieldname": "use_default_email_account_for_email",
    "fieldtype": "Check",
-   "label": "Use Default Email Account For CRM"
+   "label": "Use Default Email Account For Email"
   },
   {
    "fieldname": "default_email_account",
    "fieldtype": "Link",
    "label": "Default Email Account",
    "options": "Email Account"
-  },
-  {
-   "default": "1",
-   "fieldname": "enabled",
-   "fieldtype": "Check",
-   "label": "Enabled"
   }
  ],
  "grid_page_length": 50,
