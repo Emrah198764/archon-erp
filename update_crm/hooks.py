@@ -177,6 +177,12 @@ app_license = "mit"
 override_whitelisted_methods = {
 	"frappe.core.doctype.communication.email.make": "update_crm.overrides.communication_email.make"
 }
+
+doc_events = {
+	"Communication": {
+		"after_insert": "update_crm.communication_linking.link_incoming_email_to_crm_lead"
+	}
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
