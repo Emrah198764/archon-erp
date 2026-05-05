@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-05 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "use_default_email_account_for_crm",
+  "default_email_account",
+  "enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "use_default_email_account_for_crm",
+   "fieldtype": "Check",
+   "label": "Use Default Email Account For CRM"
+  },
+  {
+   "fieldname": "default_email_account",
+   "fieldtype": "Link",
+   "label": "Default Email Account",
+   "options": "Email Account"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-05-05 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Update Crm",
+ "name": "CRM Email Sender Preference",
+ "naming_rule": "By \"fieldname\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "user"
+}
