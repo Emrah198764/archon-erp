@@ -175,7 +175,8 @@ app_license = "mit"
 # ------------------------------
 #
 override_whitelisted_methods = {
-	"frappe.core.doctype.communication.email.make": "update_crm.overrides.communication_email.make"
+	"frappe.core.doctype.communication.email.make": "update_crm.overrides.communication_email.make",
+	"crm.api.activities.get_activities": "update_crm.overrides.activities.get_activities",
 }
 
 doc_events = {
